@@ -28,7 +28,7 @@ public partial class MainPage : ContentPage
 
     public void OnAppearing1()
     {
-        Navigation.PushModalAsync( new NavigationPage(new LoginPage()));
+        Navigation.PushModalAsync( new NavigationPage(LP));
     }
 
     private void Logout_OnClicked(object sender, EventArgs e)
