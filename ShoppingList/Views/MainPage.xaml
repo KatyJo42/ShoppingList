@@ -17,7 +17,7 @@
             </Grid.RowDefinitions>
             
             <Border Grid.Row="0" Grid.Column="0" Stroke="LightGray" StrokeThickness="1">
-                <Entry />
+                <Entry x:Name="txtInput" />
             </Border>
             
             <Button  Text="Add" Grid.Row="0" Grid.Column="1" Margin="10,0" />

@@ -4,25 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
 namespace ShoppingList.Views;
 
-public partial class LoginPage : ContentPage
+public partial class NewAccountPage : ContentPage
 {
-    public LoginPage()
+    public NewAccountPage()
     {
         InitializeComponent();
-    }
-    
-
-    private void Login_OnClicked(object sender, EventArgs e)
-    {
-        App.SessionKey = "asdf";
-        Navigation.PopModalAsync();
     }
 
     private void CreateAccount_OnClicked(object sender, EventArgs e)
     {
-        Navigation.PushAsync(new NewAccountPage());
+        App.SessionKey = "ASDF";
+        Navigation.PopModalAsync();
     }
 }
