@@ -10,13 +10,13 @@
                 <Entry  x:Name="txtUser" Placeholder="Enter Username" />
             </Border>
             <Border Stroke="Gray" StrokeThickness="1" Margin="15,15,0,0">
-                <Entry x:Name="txtPassword1" Placeholder="Enter Password" />
+                <Entry x:Name="txtPassword1" IsPassword="True" Placeholder="Enter Password" />
             </Border>
             <Border Stroke="Gray" StrokeThickness="1" Margin="15,15,0,0">
-                <Entry x:Name="txtPassword2" Placeholder="Confirm Password" />
+                <Entry x:Name="txtPassword2" IsPassword="True" Placeholder="Confirm Password" />
             </Border>
             <Border Stroke="Gray" StrokeThickness="1" Margin="15,15,0,0">
-                <Entry x:Name="Email" Placeholder="Email Address" />
+                <Entry x:Name="txtEmail" Placeholder="Email Address" />
             </Border>
            
             <Button Text="Create Account" BackgroundColor="Green" Margin="0,30" Clicked="CreateAccount_OnClicked"/>

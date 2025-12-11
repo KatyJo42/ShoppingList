@@ -10,7 +10,7 @@
                 <Entry x:Name="txtUser" Placeholder="Enter Username" />
             </Border>
             <Border Stroke="Gray" StrokeThickness="1" Margin="15,15,0,0">
-                <Entry x:Name="txtPassword" Placeholder="Enter Password" />
+                <Entry x:Name="txtPassword" IsPassword="True" Placeholder="Enter Password" />
             </Border>
             <Button Text="Login" Margin="0,30" Clicked="Login_OnClicked"/>
             <Button Text="Create Account" BackgroundColor="Green" Clicked="CreateAccount_OnClicked"/>

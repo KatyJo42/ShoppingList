@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
+using ShoppingList.Models;
 
 
 namespace ShoppingList.Views;
@@ -15,10 +17,32 @@ public partial class LoginPage : ContentPage
     }
     
 
-    private void Login_OnClicked(object sender, EventArgs e)
+    async void Login_OnClicked(object sender, EventArgs e)
     {
-        App.SessionKey = "asdf";
-        Navigation.PopModalAsync();
+        {
+            var data = JsonConvert.SerializeObject(new UserAccount(txtUser.Text, txtPassword.Text));
+
+            var client = new HttpClient();
+
+            var response = await client.PostAsync(new Uri("https://joewetzel.com/fvtc/account/login"),
+                new StringContent(data, Encoding.UTF8, "application/json"));
+            var SKey = response.Content.ReadAsStringAsync().Result;
+
+            if (!string.IsNullOrEmpty(SKey) && SKey.Length < 50)
+            {
+                //login
+                txtUser.Text = "";
+                txtPassword.Text = "";
+                
+                App.SessionKey = SKey;
+                Navigation.PopModalAsync();
+            }
+            else
+            {
+                DisplayAlert("Error", "Sorry, Wrong Username or Password", "OK");
+                return;
+            }
+        }
     }
 
     private void CreateAccount_OnClicked(object sender, EventArgs e)
